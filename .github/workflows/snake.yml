@@ -1,0 +1,55 @@
+# 工作流的名称，随便起，但最好叫 Snake
+name: Generate Snake
+
+# 触发机制：告诉机器人什么时候干活
+on:
+  # 1. 定时触发
+  schedule:
+    # cron 表达式：分 时 日 月 周
+    # "0 0 * * *" 意味着每天 UTC 时间 0点（北京时间早上8点）自动运行
+    # 这正好是你起床的时间，你醒来，蛇也更新了，完美同步
+    - cron: "0 0 * * *" 
+  
+  # 2. 手动触发
+  # 允许你在 Actions 页面点击按钮手动执行，方便测试
+  workflow_dispatch:
+
+  # 3. 推送触发
+  # 每次你修改这个分支时也跑一次，确保配置没问题
+  push:
+    branches:
+    - main
+
+# 具体的任务列表
+jobs:
+  build:
+    # 运行环境：使用最新的 Ubuntu 虚拟机
+    runs-on: ubuntu-latest
+
+    steps:
+      # 第一步：把代码仓库检出（Checkout）到虚拟机里
+      - uses: actions/checkout@v3
+
+      # 第二步：生成贪吃蛇动画
+      # 使用 Platane 大神的开源 Action
+      - uses: Platane/snk/svg-only@v3
+        id: snake-gif
+        with:
+          github_user_name: johncodes404 # 你的用户名
+          # 生成两个文件：一个是普通版，一个是深色模式版(dark)
+          # palette 参数定义了蛇吃掉格子后的颜色变化
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # 第三步：把生成的文件推送到仓库
+      # 我们不推送到 main 分支，而是推送到一个叫 output 的孤儿分支
+      # 这样你的主分支依然干净，不会被每天生成的图片弄乱历史记录
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output # 目标分支
+          build_dir: dist # 把 dist 文件夹里的东西推上去
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          # 这是一个系统自动生成的令牌，代表你的权限
+          # 机器人拿着这个令牌，才有资格修改你的仓库
