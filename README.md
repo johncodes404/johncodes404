@@ -2,7 +2,7 @@
 <!-- 这里用了一个开源服务，它会像黑客终端一样逐字敲出你的信条 -->
 <div align="center">
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=2E8B57&center=true&vCenter=true&width=435&lines=Hand%3A+Sword+%7C+Heart%3A+Logic;Face%3A+Smile+%7C+Status%3A+404;Debugging+Reality+with+Marxism;Optimizing+Ecological+Niche..." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=2E8B57&center=true&vCenter=true&width=600&lines=Hand%3A+Sword+%7C+Heart%3A+Logic;Face%3A+Smile+%7C+Status%3A+404;Debugging+Reality+with+Marxism;Optimizing+Ecological+Niche..." alt="Typing SVG" />
 </a>
 </div>
 
@@ -17,7 +17,7 @@ I am not a standard user. I am an observer in the digital jungle.
 - 🔭 **Focus:** Decoding the underlying source code of society (Political Economy & Policy).
 - 🧬 **Algorithm:** `Success = f(Origin + Luck + Era + Effort + Cognition) * Leverage`
 - 🛠️ **Tools:** I use **AI & Automation** to hack the learning curve, not to cheat the game.
-- 📚 **Database:** Currently ingesting *Zizhi Tongjian* (The Mirror of History) to predict future bugs.
+- 📚 **Database:** Currently ingesting *Comprehensive Mirror in Aid of Governance* (Zizhi Tongjian) to predict future bugs.
 
 > "Costs flow like water to the path of least resistance. I intend to build the dam."
 
